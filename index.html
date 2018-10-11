@@ -1,36 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Login Form</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,900" rel="stylesheet">
     <link rel="stylesheet" href="style/loginForm.css">
 </head>
+
 <body>
     <div class="form">
         <div class="form_header">
-            <div class="button"> Sign IN </div>
-            <div class="button"> Sign UP </div>
+            <div class="button" id="formToggle" onclick="formToggle()"> SIGN UP </div>
         </div>
-        <div class="form_main">
-            <form name="login">
+        <div class="form_main" id="login" style="display: block;">
+            <form>
                 <div class="input-container">
                     <i class="fa fa-envelope icon"></i>
-                    <input class="form_input" type="text" placeholder="email">
+                    <input class="form_input" type="email" placeholder="EMAIL">
                 </div>
                 <div class="input-container">
                     <i class="fa fa-key icon"></i>
-                    <input class="form_input" type="password" placeholder="password">
+                    <input class="form_input" type="password" placeholder="PASSWORD">
+                </div>
+                <div class="input-container">
+                    <input type="button" class="form_submit" value="LOGIN">
+                </div>
+
+            </form>
+        </div>
+        <div class="form_main" id="register" style="display: none;">
+            <form>
+                <div class="input-container">
+                    <i class="fa fa-user icon"></i>
+                    <input class="form_input" type="text" placeholder="NAME">
+                </div>
+                <div class="input-container">
+                    <i class="fa fa-envelope icon"></i>
+                    <input class="form_input" type="email" placeholder="EMAIL">
+                </div>
+                <div class="input-container">
+                    <i class="fa fa-key icon"></i>
+                    <input class="form_input" type="password" placeholder="PASSWORD">
                 </div>
                 <div class="input-container">
                     <input type="button" class="form_submit" value="Login">
                 </div>
-                
             </form>
         </div>
     </div>
 
     <script src="scripts/loginForm.js"></script>
 </body>
+
 </html>
