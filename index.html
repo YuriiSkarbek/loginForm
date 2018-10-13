@@ -35,7 +35,8 @@
             <form>
                 <div class="input-container">
                     <i class="fa fa-user icon"></i>
-                    <input class="form_input" id="register_name" type="text"  placeholder="NAME" minlength="2" maxlength="22" required>
+                    <input class="form_input" id="register_name" type="text" placeholder="NAME" minlength="2" maxlength="22"
+                        required>
                 </div>
                 <div class="input-container">
                     <i class="fa fa-envelope icon"></i>
@@ -45,6 +46,10 @@
                     <i class="fa fa-key icon"></i>
                     <input class="form_input" id="register_password" type="password" placeholder="PASSWORD" required>
                 </div>
+                <label class="label_container">I agree with terms
+                    <input type="checkbox" id="register_terms">
+                    <span class="checkmark" id="register_checkmark"></span>
+                </label>
                 <div class="input-container">
                     <input type="button" class="form_submit" value="REGISTER" onclick="registerValidate()">
                 </div>
