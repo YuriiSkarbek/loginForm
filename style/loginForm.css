@@ -60,6 +60,24 @@ body {
     width: 80%;
     margin: 0 auto;
     margin-bottom: 15px;
+    position: relative;
+}
+
+#password_eye {
+    position: absolute;
+    min-width: 40px;
+    padding: 8px;
+    text-align: center;
+    font-size: 19px;
+    cursor: pointer;
+    right: 2px;
+    top: 2px;
+    opacity: .4;
+    transition: .2s;
+}
+
+#password_eye:hover {
+    opacity: .7;
 }
 
 form {

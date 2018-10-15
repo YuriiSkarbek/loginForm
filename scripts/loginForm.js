@@ -14,6 +14,21 @@ function formToggle() {
     }
 }
 
+// Toggle Password Visibility
+var password_eye = document.getElementById('password_eye');
+password_eye.onmousedown = function () {
+    document.getElementById('login_password').type = 'text';
+    password_eye.style.color = 'green';
+    password_eye.classList.remove('fa-eye-slash');
+    password_eye.classList.add('fa-eye');
+}
+password_eye.onmouseup = function () {
+    document.getElementById('login_password').type = 'password';
+    password_eye.style.color = 'black';
+    password_eye.classList.remove('fa-eye');
+    password_eye.classList.add('fa-eye-slash');
+}
+
 // validation register form
 function registerValidate() {
     // validate input name with id='register_name'
