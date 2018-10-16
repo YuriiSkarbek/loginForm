@@ -188,3 +188,44 @@ form {
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+
+@media only screen and (min-width : 1824px) {
+    .form {
+        width: 1000px;
+    }
+
+    .form_header {
+        height: 300px;
+    }
+}
+
+@media only screen and (min-width : 1224px) {
+
+    .form {
+        width: 700px;
+    }
+
+    .form_header {
+        height: 200px;
+    }
+}
+
+@media only screen and (min-width : 720px) and (max-width : 1223px) {
+    .form {
+        width: 500px;
+    }
+
+    .form_header {
+        height: 180px;
+    }
+}
+
+@media only screen and (min-width : 380px) and (max-width : 719px) {
+    .form {
+        width: 80%;
+    }
+
+    .form_header {
+        height: 120px;
+    }
+}
