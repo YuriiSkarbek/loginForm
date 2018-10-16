@@ -15,14 +15,17 @@ function formToggle() {
 }
 
 // Toggle Password Visibility
-var password_eye = document.getElementById('password_eye');
+
 function passShow() {
+    var password_eye = document.getElementById('password_eye');
     document.getElementById('login_password').type = 'text';
     password_eye.style.color = 'green';
     password_eye.classList.remove('fa-eye-slash');
     password_eye.classList.add('fa-eye');
 }
+
 function passHide() {
+    var password_eye = document.getElementById('password_eye');
     document.getElementById('login_password').type = 'password';
     password_eye.style.color = 'black';
     password_eye.classList.remove('fa-eye');
@@ -32,17 +35,17 @@ function passHide() {
 
 
 // validation register form
-function registerValidate() {
+function validateRegisterForm() {
+    var registerFormIsValid = true;
     // validate input name with id='register_name'
     var nameValue = document.getElementById('register_name').value;
     var nameRGEX = /^[A-Za-z]{2,14}$/;
     var nameResult = nameRGEX.test(nameValue);
 
     if (nameResult == false) {
-        console.log("name: " + nameResult);
         document.getElementById('register_name').style.background = 'rgb(255, 179, 179)';
         document.getElementById('register_name').style.borderLeft = '2px solid rgb(255, 179, 179)';
-        return false;
+        registerFormIsValid = false;
     } else {
         document.getElementById('register_name').style.background = 'white';
         document.getElementById('register_name').style.borderLeft = 'white';
@@ -54,10 +57,9 @@ function registerValidate() {
     var emailResult = emailRGEX.test(emailValue);
 
     if (emailResult == false) {
-        console.log("email: " + emailResult);
         document.getElementById('register_email').style.background = 'rgb(255, 179, 179)';
         document.getElementById('register_email').style.borderLeft = '2px solid rgb(255, 179, 179)';
-        return false;
+        registerFormIsValid = false;
     } else {
         document.getElementById('register_email').style.background = 'white';
         document.getElementById('register_email').style.borderLeft = 'white';
@@ -69,10 +71,9 @@ function registerValidate() {
     var passwordResult = passwordRGEX.test(passwordValue);
 
     if (passwordResult == false) {
-        console.log("password: " + passwordResult);
         document.getElementById('register_password').style.background = 'rgb(255, 179, 179)';
         document.getElementById('register_password').style.borderLeft = '2px solid rgb(255, 179, 179)';
-        return false;
+        registerFormIsValid = false;
     } else {
         document.getElementById('register_password').style.background = 'white';
         document.getElementById('register_password').style.borderLeft = 'white';
@@ -80,16 +81,33 @@ function registerValidate() {
 
     // check the checkbox 'i agree with terms'
     if (document.getElementById('register_terms').checked) {
-        console.log('check box CHECKED!');
+
     } else {
         document.getElementsByClassName('label_container')[0].style.color = 'red';
-        return 0;
+        registerFormIsValid = false;
     }
-    // if validation OK:
-    alert('WELCOME');
-    document.getElementById('register_name').value = '';
-    document.getElementById('register_email').value = '';
-    document.getElementById('register_password').value = '';
-    document.getElementById('register_terms').checked = false;
-    document.getElementsByClassName('label_container')[0].style.color = 'black';
+
+    if (registerFormIsValid == true) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function register() {
+    if (validateRegisterForm() == true) {
+        document.getElementById('register_name').value = '';
+        document.getElementById('register_email').value = '';
+        document.getElementById('register_password').value = '';
+        document.getElementById('register_terms').checked = false;
+        document.getElementsByClassName('label_container')[0].style.color = 'black';
+        alert('WELCOME');
+    } else {
+        console.error('VALIDATION IS NOT OK');
+    }
+}
+
+function onClickRegister() {
+    validateRegisterForm();
+    register();
 }
