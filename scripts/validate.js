@@ -56,10 +56,19 @@ function validateRegisterForm() {
         document.getElementById('register_password').style.background = 'white';
         document.getElementById('register_password').style.borderLeft = 'white';
     }
-
+    var passwordConfirmValue = document.getElementById('register_password_confirm').value;
+    if(passwordConfirmValue = '' || passwordValue != passwordConfirmValue){
+        document.getElementById('register_password_confirm').style.background = 'rgb(255, 179, 179)';
+        document.getElementById('register_password_confirm').style.borderLeft = '2px solid rgb(255, 179, 179)';
+        registerFormIsValid = false;
+    }
+    else if(passwordValue == passwordConfirmValue){
+        document.getElementById('register_password_confirm').style.background = 'white';
+        document.getElementById('register_password_confirm').style.borderLeft = 'white';
+    }
     // check the checkbox 'i agree with terms'
     if (document.getElementById('register_terms').checked) {
-
+        document.getElementsByClassName('label_container')[0].style.color = 'black'
     } else {
         document.getElementsByClassName('label_container')[0].style.color = 'red';
         registerFormIsValid = false;
