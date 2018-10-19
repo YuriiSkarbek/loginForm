@@ -13,6 +13,7 @@ body {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .form_header {
@@ -25,28 +26,37 @@ body {
     align-items: flex-end;
 }
 
-.button {
-    width: 100%;
-    height: 50px;
+.button_toggle {
+    width: auto;
+    height: 30px;
+    padding: 0 20px;
     box-sizing: border-box;
-    border-top: 2px solid rgba(44, 87, 70, 1);
-    background-color: rgb(255, 255, 255, .2);
     cursor: pointer;
     transition: .3s;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(255, 255, 255);
+    align-self: center;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    /* background-color: rgba(255, 0, 0, .5); */
+    bottom: 5px;
+    font-size: 12px;
+    opacity: .8;
 }
 
-.button:hover {
-    border-top: 2px solid rgba(174, 206, 169, 1);
-    background-color: rgba(44, 87, 70, .7);
-    color: white;
+.button_toggle:hover {
+    opacity: 1;
 }
 
-.button::selection {
+.button_toggle::selection {
     background-color: transparent;
+}
+
+.button_span{
+    padding-left: 5px;
+    font-weight: 500;
+    color: rgb(68, 0, 102);
 }
 
 .form_main {

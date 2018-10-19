@@ -6,11 +6,11 @@ function formToggle() {
     if (login.style.display == 'none') {
         login.style.display = 'block';
         register.style.display = 'none';
-        formToggle.innerHTML = 'SIGN UP';
+        formToggle.innerHTML = "Don't have an Account? <span class='button_span'> SIGN UP </span>";
     } else {
         login.style.display = 'none';
         register.style.display = 'block';
-        formToggle.innerHTML = 'SIGN IN'
+        formToggle.innerHTML = "You already have an account? <span class='button_span'> SIGN IN </span> "
     }
 }
 
